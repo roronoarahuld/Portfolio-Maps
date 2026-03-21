@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+$top        : 20px;
+$avatar-sz  : 52px;
+$gap        : 16px;
+$input-left : calc(#{$avatar-sz} + #{$gap} + #{$top}); // 100px
+// dropdown height approx: 4 rows × 56px + 24px padding = ~248px
+$dropdown-h : 256px;
+
+.card {
+  position     : fixed;
+  top          : calc(#{$top} + #{$avatar-sz} + 6px + #{$dropdown-h});
+  left         : $input-left;
+  width        : calc(300px + 12px);
+  background   : #ffffff;
+  border-radius: 16px;
+  box-shadow   : 0 4px 24px rgba(0, 0, 0, 0.10),
+                 0 1px 6px  rgba(0, 0, 0, 0.06);
+  padding      : 16px 18px;
+  z-index      : 99;
+  font-family  : 'Poppins', sans-serif;
+
+  opacity        : 0;
+  transform      : translateY(-8px);
+  pointer-events : none;
+  transition     : opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+
+  &.cardVisible {
+    opacity       : 1;
+    transform     : translateY(0);
+    pointer-events: all;
+  }
+}
+
+// ── Weather row ───────────────────────────────────────────────
+.weatherRow {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  margin-bottom  : 12px;
+}
+
+.city {
+  font-size  : 18px;
+  font-weight: 400;
+  color      : #1e1e1e;
+}
+
+.weatherRight {
+  display    : flex;
+  align-items: center;
+  gap        : 10px;
+}
+
+.temp {
+  font-size  : 18px;
+  font-weight: 400;
+  color      : #a6a6a6;
+}
+
+.sunCircle {
+  width        : 28px;
+  height       : 28px;
+  border-radius: 50%;
+  background   : #FFC107;
+  box-shadow   : 0 0 8px rgba(255, 193, 7, 0.5);
+}
+
+// ── Traffic row ───────────────────────────────────────────────
+.trafficRow {
+  display    : flex;
+  align-items: center;
+  gap        : 14px;
+}
+
+.trafficIconWrap {
+  width          : 46px;
+  height         : 46px;
+  min-width      : 46px;
+  border-radius  : 50%;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  transition     : background 0.4s ease;
+}
+
+.trafficText {
+  display       : flex;
+  flex-direction: column;
+  gap           : 3px;
+}
+
+.trafficLabel {
+  font-size  : 16px;
+  font-weight: 400;
+  color      : #1e1e1e;
+  line-height: 1.3;
+}
+
+.trafficSub {
+  font-size  : 12px;
+  font-weight: 400;
+  color      : #797979;
+}
