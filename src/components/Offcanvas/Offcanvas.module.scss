@@ -1,0 +1,30 @@
+.offcanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 433px;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 90;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    // starts hidden off-screen to the left
+    transform: translateX(-100%);
+    transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+
+    // right-side box shadow as per design
+    box-shadow: 8px 0 40px rgba(0, 0, 0, 0.14),
+        2px 0 10px rgba(0, 0, 0, 0.06);
+
+    // hide scrollbar visually but keep scroll
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &.open {
+        transform: translateX(0);
+    }
+}

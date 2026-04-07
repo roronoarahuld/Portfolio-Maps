@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+.panel {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+// ── Hero image ────────────────────────────────────────────────
+.imageWrap {
+    width: 100%;
+    height: 396px;
+    overflow: hidden;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+// ── Header ───────────────────────────────────────────────────
+.header {
+    padding: 30px 30px 0;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: 500; // medium
+    color: #1e1e1e;
+    margin: 0 0 6px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 16px;
+    font-weight: 400; // regular
+    color: #797979;
+    margin: 0;
+    line-height: 1.4;
+}
+
+// ── Tabs ─────────────────────────────────────────────────────
+.tabs {
+    display: flex;
+    gap: 0;
+    margin-top: 39px; // gap from subtitle
+    padding: 0 30px;
+    border-bottom: 1.5px solid #E0D8CC;
+    justify-content: space-around;
+}
+
+.tab {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #797979;
+    background: transparent;
+    border: none;
+    border-bottom: 2.5px solid transparent;
+    padding: 0 25px 10px;
+    margin-bottom: -1.5px; // overlap the container border-bottom
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover:not(.tabActive) {
+        color: #1e1e1e;
+    }
+}
+
+.tabActive {
+    font-weight: 500; // medium
+    color: #2C80CF;
+    border-bottom: 2.5px solid #2C80CF;
+}
+
+// ── Tab content ───────────────────────────────────────────────
+.tabContent {
+    padding: 24px 30px 40px;
+}
+
+.overviewText {
+    font-size: 16px;
+    font-weight: 300; // light
+    color: #1e1e1e;
+    line-height: 1.75;
+    margin: 0;
+    white-space: pre-line; // preserves \n\n line breaks
+}
+
+.bold {
+    font-weight: 700;
+    color: #1e1e1e;
+}
+
+.skillsTab {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.skillRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.skillLabel {
+  font-size: 15px;
+  font-weight: 400;
+  color: #1e1e1e;
+  white-space: nowrap;
+  min-width: 180px;
+}
+
+.skillIcons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.skillIcon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 6px;
+  mix-blend-mode: multiply; // kills the black backgrounds on white canvas
+  transition: transform 0.15s ease;
+    img{
+        width: 30px;
+        height: 30px;
+    }
+}

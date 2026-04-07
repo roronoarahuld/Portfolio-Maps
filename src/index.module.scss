@@ -3,3 +3,26 @@ html,body{
     margin: 0;
     box-sizing: border-box;
 }
+/* ──────────────────────────────────────────────────────────────
+   WORK MAP PINS — global CSS (Leaflet renders divIcon HTML
+   directly into the DOM, so module.scss won't reach it)
+   Append this block to src/index.scss
+   ────────────────────────────────────────────────────────────── */
+ 
+.work-pin-wrapper {
+  display: block;
+  opacity: 0;
+  animation: workPinDrop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+ 
+@keyframes workPinDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-18px) scale(0.65);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+ 
